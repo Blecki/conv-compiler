@@ -1,0 +1,21 @@
+﻿supplies Gus
+{
+	//The stolen hat conversation arc
+	@ where did you put my hat?
+	#comment "Gus, my hat is gone. I know you stuck it somewhere."
+	#response Gus won't look you in the eyes. "I didn't touch it, swear to God." You don't believe him. You have it on good authority that he is, in fact, an athiest.
+	
+	follows
+	{
+		@ I saw you with it. 
+		#comment "I saw you with my hat!" you shout. No point in hiding your anger from a thief.
+		#response "Whoa whoa!" Gus says, holding his hands up before him. He's actually wearing your hat right now.
+		
+		follows
+		{
+			@ snatch the hat! 
+			#comment You grab your hat from off Gus' ugly head.[perform now the hat is held by the player.]
+			#response "Uh," Gus says. "You might want to check that for lice."
+		}
+	}
+}
