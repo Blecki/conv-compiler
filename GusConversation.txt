@@ -1,0 +1,69 @@
+supplies Gus
+{
+	@ATTACK what happened to Sam?
+	# "What happened to Sam?" you ask. "Do you know where he is?'".
+	# "Sorry Doc," Gus says, through the crackle of radio interference. "You're the first one who'se gotten on the radio since we were attacked."
+
+	@ what happened to Ashley?
+	# "Have you seen Ashley? Is she alright?" you ask. You try not to let your worry show in your voice.
+	# "You're the first one I've gotten on the radio since the attack, Doc," Gus replies. "I haven't seen anyone."
+
+	follows
+	{
+		@ I don't remember much of the attack.
+		# "I don't remember much of what happened, Gus," you say. "I remember seeing some ships, and then.. I think I hit my head hard enough to forget some things."
+		# "I'll fill you in then. We came out of the jump, right? There was already a firefight in front of us. A bunch of big Click ships and an Alliance cruiser. I think the cruiser clipped us. Anyway, it couldn't have known with all that chaos."
+		#follows ATTACK
+	}
+
+	@ where are you now?
+	# "Where are you now, Gus?" you ask. "Is your air holding out?"
+	# "Got no air. Got a suit, though. I'm fine for now," Gus says. "I'm in the cockpit. Captain's up here too. Got a great view."
+
+	follows 
+	{
+		@ what can you see from the cockpit?
+		# [if immediately]"Yeah?[otherwise]You have a great view, huh?[end if] What can you see from there?"
+		# "Nothing, mostly," Gus says. "We're in some kind of hanger. I think it's the Antioch, but stuff's not quite right. For example, none of the lights are on. It must have taken us on board."
+
+		follows 
+		{
+			@ I've never heard of the Antioch.
+			# "Antioch? I've never heard of it."
+			# "Oh," Gus says, "She's that big cruiser we almost ran into when we entered the system. Big Alliance ship. Jupiter class."
+
+			follows
+			{
+				@ what do you know about the Antioch?
+				# "Can you tell me anything else about the Antioch?" you ask.
+				# "Not much, no." Gus is momentarily lost in static. "She's Jupiter class, which means big. It's a military ship, of course. It's not like they give tours. I haven't heard anything specific about the Antioch, but Jupiter class ships are supposed to be fast. Well. For their size."
+
+				follows
+				{
+					@ what makes a Jupiter class ship so fast?
+					# "Jupiter-class ships are fast?" you ask. "What's unigue about their engines to make them so fast?"
+					# "Oh, nothing," Gus says. "They're just too big. Take this bucket, for example. She has tiny engines for her size, so she's slow as hells balls. The Jupiter's have huge engines. Of course, they have that top-secret power plant to run them. All we've got is an ordinary fusion box."
+				}
+
+				@ Didn't the Antioch fire on the colony?
+				# "I'm sure I saw the cruiser firing on the colony. Why would an Alliance ship do that?" 
+				# "Beats me, Doc," Gus says. "Maybe she's not an Alliance ship anymore? I thought I saw her fire on the Clicks too."
+			}
+		}
+
+		@ can I speak to the Captain?
+		# [if immediately]"Alright Gus, can I talk to him?"[otherwise]"Do you mind if I talk to the Captain for a bit, Gus?"[end if] you ask.
+		# "Oh, Captain's dead," gus says. "Probably should have mentioned that."
+
+		follows
+		{
+			@ can anyone else fly this ship?
+			# "Can anyone besides the Captain fly this ship?[if immediately] Not trying to be calous, but this is important.[end if]"
+			# "I reckon I can. Sal has flown her before. Flying isn't hard, you know. You really just tell the computer where you want to go."
+
+			@ how did the captain die?
+			# [if immediately]"Oh, damn. How did he die?" you ask.[otherwise]"How did the Captain die, Gus?" you ask.[end if]
+			# "Lost air pressure. I got into my suit in time. Captain wasn't so lucky."
+		}
+	}
+}

@@ -1,0 +1,39 @@
+Conversation definition format spec
+
+@optional-name Where art thou, my brother? 
+# "Yo bro, where you at?" you shout.
+# Your brother waves back from across the parking lot. There he art.
+
+-Nodes can be optionally named. If not named, it's not possible to refer back to them.
+
+Control blocks: Supplies blocks, follows blocks
+
+Supplies Gus
+{
+	A set of quips that all supply gus
+}
+
+Follows @
+{
+	A set of quips that indirectly-follow @.
+}
+
+If no name is given to a follow block, it follows the quip defined immediately previous.
+
+A conversation with Gus:
+
+Supplies Gus, Sal <- Multiple people can be listed.
+{
+	@ where did you put my hat? <- '?' denotes a questioning quip. No name, so a name is generated.
+	#comment "Gus, my hat is gone. I know you stuck it somewhere." <- 'comment' is optional. First un-named directive is assumed to be the comment. Similarily, the second is assumed to be the response.
+	#response Gus won't look you in the eyes. "I didn't touch it, swear to God." You don't believe him. You have it on good authority that he is, in fact, an athiest.
+	#additional directives can be listed, such as 'follows', 'supplies', 'mentions'
+	
+	Follows <- No name, so it follows 'where did you put my hat?'. Can also list multiple quip ids.
+	{
+		@ I saw you with it. <- '.' denotes an informative quip.
+		etc
+		
+		@ snatch the hat! <- '!' denotes a performative quip.
+	}
+}
