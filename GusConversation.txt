@@ -7,6 +7,7 @@ supplies Gus
 	@ what happened to Ashley?
 	# "Have you seen Ashley? Is she alright?" you ask. You try not to let your worry show in your voice.
 	# "You're the first one I've gotten on the radio since the attack, Doc," Gus replies. "I haven't seen anyone."
+	#unavailable the player holds the flare
 
 	follows
 	{

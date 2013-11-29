@@ -1,0 +1,346 @@
+supplies Henrico
+{
+	@ if he would like a fish?
+	# "Would you like a fish?" you ask.
+	# "No, no," Mr. Henrico responds, politely refusing the offered sea creature. "I'm not a fan of sushi."
+	#unavailable the player does not enclose a fish
+
+	@ if he saw that enormous pelican?
+	# "Did you see that gigantic bird?" you ask.
+	# "Seemed kind of small for a pelican, actually," Mr. Henrico says.
+	#unavailable Shoo is hungry
+
+	@ what he knows about your grandmother?
+	# "You've spoken to her, right? Is she really that awful?" you ask.
+	# Mr. Henrico rubs his chin. "She seemed nice enough on the phone. You shouldn't worry about it. I'm sure the things your mother used to tell you about her were exaggeration."
+
+	follows
+	{
+		@ the things your mother told you.
+		# "Mother called her an insurmountable old shrew. She never wrote, you know. I expected her not to call, they probably don't even have electricity, but they've got mail, right?"
+		# Mr. Henrico stares at you perplexed for a moment and then plasters his fake everything is all right grin on again. "I don't know about all that now. I'm sure they have electricity. Though she did have to come over to the mainland to call me.."
+
+		@ what he thinks about you?
+		# "What about me?" you ask. "Have you decided you hate me as much as all the others did yet?"
+		# "I don't see why anyone would hate you. Too smart for your own good, I think," Mr. Henrico says. "You need to work on that cynicism, too. You're far too young to be so jaded, and it won't help you in the long run."
+
+		@ couldn't you live with your aunt instead?
+		# "I still don't see why I couldn't go live with aunt Jamie."
+		# "Your Grandmother is your last living relation and she's kindly offered to take you in, you should be happy about this," Mr. Henrico insists. "Miss Jamie isn't even your aunt, she's just a friend of your mother's, and the law is very clear on this."
+	}
+
+	@ about himself?
+	# "What about you, Mr. Henrico?"
+	# "Never really thought I was cut out for this sort of thing," Mr. Henrico muses, as if ha hadn't actually heard you ask anything. "Going to call this one a rousing success, though."
+
+	@ what he knows about the island?
+	# "Is the island as dreadful as it sounds?" you ask.
+	# "I've heard it's very nice. No television or internet to get in the way of enjoying yourself out there. Really good fishing, too," Mr. Henrico says.
+
+	follows
+	{
+		*?HENRICO_2 Henrico probes about ghosts
+		# "Do you believe in ghosts?" Mr. Henrico asks.
+		#nag [one of]"Children often believe in strange things, do you?" Mr. Henrico asks.[or]"Don't worry about ghosts. You don't believe in them, do you?" Mr. Henrico asks.[purely at random]
+
+		directly
+		{
+			@ yes.
+			# "Lots of people have seen ghosts," you say.
+			# Mr. Henrico looks rather dissapointed.
+
+			@ no.
+			# "No way," you say.
+			# Mr. Henrico nods. That was the answer he wanted.
+		}
+
+		*HENRICO_1 In response to henrico mentioning ghosts
+		#response "Not that I believe in ghosts," Mr. Henrico mutters.[queue <HENRICO_2>]
+
+		@ that you read the lighthouse was haunted.
+		# "Wikipedia says the lighthouse is haunted," you say.
+		# "Don't like lighthouses," Mr. Henrico replies. "Too tall and too bright. Don't like ghosts either, for different reasons."[queue <HENRICO_1>]
+	}
+
+	@ look at my pocket watch.
+	# "Have I shown you my pocket watch?" you ask, holding up the watch where Mr. Henrico can see.
+	# "Only a thousand times," Mr. Henrico replies. "What have I told you about moving on? You'll never be able to as long as you cling to things like that."
+	#unavailable the pocket watch is not examined
+}
+
+supplies Spider
+{
+	@ if he knows your grandmother?
+	# "Do you know my grandmother?" you ask. "She's.. uh. Old, I guess."
+	# "Huh," says [the Spider]. "I reckon I probably do. Old, huh? There's only one of them on the island, so I reckon you're after Catherine, who runs the bed and breakfast."
+
+	follows
+	{
+		@ if many people stay at the bed and breakfast?
+		# "Are there a lot of guests at the bed and breakfast?" you ask.
+		# "Well... no," [the Spider] responds. "See most bed and breakfastes are better described as beds and breakfasteses, but at this one I reckon the bed is singular."
+	}
+
+	@ who are you?
+	# "Is this your boat?" you ask, to get at the real question in a roundabout way. "You look rather like a sea captain."
+	# "Captain!" exclaims [the Spider]. "That's my first name. The rest of it is Spider. That's not really my name o'course, but everyone yells Cap'n Spider when who they really want is me, so you might as well call me that too."[perform introduce Spider]
+
+	@ is there anything interesting to do on the island?
+	# "What do you do for fun on the island?" you ask. This is a very important question since you've never much been a fan of building sand castles or yelling at seagulls, and you can't think of anything else there is to do on an island.
+	# "Oh fish, mostly. And sail." [The Spider] rubs his chin. "Motor, I reckon, cause I got a motor not sails. And there's the lighthouse, if you're into tall things with bright lights on the top. And treasure."
+
+	follows
+	{
+		@ can you tour the top of the lighthouse?
+		# "Am I allowed to go up in the lighthouse?" you ask.
+		# "I don't see why not," [the Spider] says. "You'd have to ask Franklin."
+
+		follows 
+		{
+			@ who is Franklin?
+			# [if immediately]"Who'se that?" you ask.[otherwise]"Who is Franklin?" you ask.[end if]
+			# "He's a coast guard reject. Always thought he was a bit odd. He keeps the lighthouse going. Spinning and shining, that's what's important I reckon."
+		}
+
+		@ what about treasure?
+		# "What was that about treasure?" you ask.
+		# "Oh you know, the sparkly kind. It's somewhere in that cave by the beach. I got into it, too, though it made Catherine mighty mad."
+
+		follows
+		{
+			@ why would treasure make her mad?
+			# "Why would looking for treasure make her mad?" you ask.
+			# "Oh that's an easy one," [the spider] says. "Just look in her cellar and find out!"
+		}
+
+	}
+
+	@ what's with the hook?
+	# "Why are you using a hook for buttons?" you ask. "You've got buttons already."
+	# "Hook?" [the Spider] asks. "What hook?" [The Spider] looks down at his shirt. "This isn't even mine," he says as he removes the hook and does up the buttons instead.[paragraph break][perform now the player holds the hook charm][perform remove the spider-hook from play][The Spider] gives the hook to you.
+	#unavailable Spider is not examined
+
+	@ that's an interesting pipe.
+	# "You've got a very interesting pipe," you say. You don't mention that it's not even lit.
+	# "What, this old thing?" [the Spider] asks. "Only carved it myself. Yep. From the jaw bone of a dolphin."
+
+	follows
+	{
+		@ are there any dolphins on Akkoteaque?
+		# "Are there any dolphins on the island?" you ask.
+		# [The Spider] ponders for a moment. "On, no, I don't think so. But there are some around the island, yep. Always thought they were vermin but some people seem to like them. And I suppose they do save people who fall off the cliff sometimes."
+	}
+
+	@ what's with the pelican?
+	# "Is that pelican always in the way?" you ask. "Doesn't anyone care that it's pestering people?"
+	# [The Spider] says, "That damn bird is the laziest thing I ever saw, but she doesn't actually harm anything so we let her be. We all call her Shoo. As in... shoo."
+
+	@ what is Delmarva?
+	# "What is 'Delmarva'?" you ask.
+	# "Deleware, Maryland, Virginia," [the Spider] says. "That's all three states on the pennies-ula."
+	#unavailable Spider is not in the Jetty
+
+	@ if he sees that giant boat?
+	# "Do you see that giant boat?" you ask. You point, just in case he's blind.
+	# "Aye I see it. On the wrong damn side of the island!" [the Spider] shouts.[paragraph break]Then he mutters with his pipe clenched between his teeth, "Like as not get us all killed."
+	#unavailable the ferry is not enclosed by the sea
+
+	+ if he knows anything about this ancient key?
+	# You hold up [the ancient key] for [the Spider] to see. "Do you know anything about this?"
+	# [The Spider] takes a close look. "Found that beauty in the caves. Reckon if I ever find the chest with the treasure init, that'll open it. Don't go and lose it, hear?"
+	#unavailable the ancient key is not examined
+}
+
+		
+// Response of Spider when asked about the spider-beard:
+// 	say "[The spider] strokes his beard. 'Yep, yep, it is quite an impressive beard.'".
+	
+// Section - Responses that hint about puzzle objects
+
+
+// Response of Spider when asked about the detonator:
+// 	Say "'Not really a toy for children,' [the Spider] yarns, 'got to hook some dynamite up to tha' thing anyway. Or else what it going to 'splode?'".
+// Response of Spider when asked about the generator:
+// 	Say "'Well it makes electricity, right? Get you some juice to light the place up. Kind of amazing, really. That thing turns fossil fuels into artifishal sun.'".
+// Response of Spider when asked about the paddle fuse:
+// 	If the player encloses the paddle fuse:
+// 		Say "'Oh, you found it. Well. That's good then.'";
+// 	Otherwise:
+// 		Say "[The Spider] scratches his beard. 'Well now, I had a spare. I must have dropped it in that cave somewhere.'".
+// Response of Spider when asked about the slot:
+// 	Say "'That's no problem. Just slap a padd'l fuse in there.'";
+// 	Now the paddle fuse is familiar.
+// Response of Spider when asked about the ancient chest:
+// 	Say "'I always specu-late-ed that that there chest was somewhere under the inn. Never got there, though, old bag Catherine wouldn't let me blast.'".
+// Response of Spider when asked about the skeleton:
+// 	Say "[The Spider] shifts his pipe back and forth from one side of his mouth to another. 'Spooky', he says. 'I don't know what I'd do if I found that.'".
+	
+// Section - Responses about unrelated items
+
+// Response of Spider when asked about Alabaster:
+// 	Say "'Some kind of tourist? I think I'd remember bringing that across.'".
+	
+// Response of Spider when asked about the altar:
+// 	Say "'Never knew which bit was the altar. Kinda looks like a table to me.'".
+	
+// Response of Spider when asked about the amber bottle:
+// 	Say "'Rum rum rum, yum yum yum! Rum rum rum, it goes in my tum! Fnar fnar!'".
+	
+// [Ancient Chest]
+
+
+
+// Response of Spider when asked about the projector:
+// 	If the location of Spider encloses the projector:
+// 		Say "[The Spider] peers at [the projector]. 'It's mighty odd looking, innit? Sort of, what's that called. Steampunky.'";
+// 	Otherwise:
+// 		Say "'I don't think I know much about projectofiers. Don't you need to point it at a screen?'".
+		
+// Response of Spider when asked about the nest:
+// 	Say "'A gull's nest? In a cliff? By the ocean? Aint that somethin.'".
+	
+// Response of Spider when asked about the gulls:
+// 	Say "'Noisy buggers, aren't they?'".
+	
+// Response of Spider when asked about the ducks:
+// 	Say "'Never did like ducks. They think they are better than gulls, see, but they really aint.'".
+	
+// Response of Spider when asked about Gerald:
+// 	Say "'Who? I'm pretty sure I'm the only old man around here.. fnar fnar!'".
+	
+// Response of Spider when asked about the iron gate:
+// 	Say "'I guess the father would have the key to that. I sure don't.'".
+	
+// Response of Spider when asked about the ladder:
+// 	Say "'Ladder's good for climbing up to high places. Nice and portable too, that ladder.'".
+	
+// Response of Spider when asked about the posters:
+// 	Say "'They're nice posters, aren't they? Course, it's always wet in there, so.'".
+	
+// Response of Spider when asked about the shack-bed:
+// 	Say "'Stay off my bed, ya hear lass? I don't need any stories goin' round.'".
+	
+// Response of Spider when asked about the rusty table:
+// 	Say "'So what if it's a little rusty? It still works as a table, doesn't it?'".
+
+
+
+// [Response of Alabaster when asked about Alabaster:
+// 	Say "'Alabaster is the name. Alabaster of Alabaster Plaster. Of course, the name was White before we got into the business.'";
+// 	Introduce Alabaster.
+// Response of Alabaster when asked about the projector:
+// 	Say "'My etho-projectofier,' [the alabaster] says. 'It lets me peer into the world of the dead and speak with ghosts!'";
+// 	Now the printed name of the projector is "etho-projectofier";
+// 	Now the ghosts are familiar.
+// Response of Alabaster when asked about akkoteaque:
+// 	Say "'I'd heard that this is the most haunted island in Delmarva. So naturally I came here to look for the ghosts.'";
+// 	Now the ghosts are familiar.
+// Response of Alabaster when asked about the lighthouse:
+// 	Say "'The lighthouse is only one reason tourists come to this island. There's also the ghosts.'";
+// 	Now the ghosts are familiar.
+// Response of Alabaster when asked about the ghosts:
+// 	Say "'I've heard of four on this island... though I've only seen one.'[paragraph break][The alabaster] tucks his thumbs through his belt. 'There's the Captain. That's what the old woman upstairs calls him. And the sad woman. And the engineer. I think the lighthouse holds him here. That's the thing about ghosts. They always stick around for a reason. There's also the girl.[paragraph break]'The strangest thing is, of all the ghosts I've met over the years, non have ever realized they were dead. They've all forgotten how it happened! As soon as you remind them, they go poof, so I try not to.'";
+// 	If Asked-Alabaster-About-Ghosts is false:
+// 		Add Spider to the ask-suggestions of Alabaster;
+// 		Add Franklin to the ask-suggestions of Alabaster;
+// 		Add Elizabeth to the ask-suggestions of Alabaster;
+// 		Add the little girl to the ask-suggestions of Alabaster;
+// 		Now the little girl is familiar;
+// 		Now Asked-Alabaster-About-Ghosts is true;
+// Response of Alabaster when asked about the subject-grandmother:
+// 	Say "'I guess that'd be the septuagenarian that ran this place. She's upstairs, but take this bit of advice: She's not a conversationalist.'".
+
+// Response of Alabaster when asked about Franklin:
+// 	Say "'Ah, Franklin. He was the engineer from the coast guard assigned to the lighthouse. I've heard conflicting reports, but they all agree that he haunts the lighthouse itself.'";
+// 	Introduce Franklin.
+// Response of Alabaster when asked about Spider:
+// 	Say "[The Alabaster] nods knowingly. 'Of course you've met the Captain. Everyone seems to run into him. He used to drive the ferry back and forth until one day, he just vanished. Now he seems to flit about the jetty. I've heard he always stays close to the ferry, though it's a bit of a mess nowadays.'".
+// Response of Alabaster when asked about Elizabeth:
+// 	Say "'That one is almost a rather tragic story of lost love. I say almost because she was thirty five when she drowned and he was sixty two. It doesn't make any sense to me, unless he's secretly rich.. He'd be Gerald. He comes about the island quite frequently, despite being well into his eighties.' [The alabaster] rubs his chins. 'He's quite a fountain of information if you can get him talking.'".
+// Response of Alabaster when asked about Gerald:
+// 	Say "'I think he's probably coming over to the island on important dates. Like their aniversary. Anyway, he's here now so you could just ask him yourself.'".
+// Response of Alabaster when asked about the little girl:
+// 	Say "'She's the hardest to spot of the four ghosts that supposably haunt this place. In fact, noone has actually seen her. She's supposably something of a poltergeist.' [The alabaster] rubs his hands together gleefully. 'She'll be my first poltergeist if I can actually find her. She doesn't seem to be tied to any place on the island.'".
+// ]
+
+
+// [Response of Elizabeth when asked about Elizabeth:
+// 	Say "'Who, me? I'm Elizabeth, if it's that important to you.'";
+// 	Introduce Elizabeth.
+// Response of Elizabeth when asked about the elizabeth-nose:
+// 	Say "[The elizabeth] glares at you. 'You're rather rude, aren't you?'".
+// Response of Elizabeth when asked about the elizabeth-hat:
+// 	Say "'This old thing?' [the elizabeth] asks. 'Just something Gerald bought for me.'";
+// 	Now subject-gerald is familiar.
+// Response of Elizabeth when asked about subject-gerald:
+// 	Say "[One of]'He does love his lighthouses.. that's why we're here,' [the elizabeth] says.[or]'He will be over on the next ferry,' [the elizabeth] says. 'He had some last minute errand. I guess I'll go settle in at the inn.'[cycling]".
+// Response of Elizabeth when asked about Gerald:
+// 	Say "'Don't be ridiculous. He hasn't even arrived on the island yet, how could you have met him?'".
+// Response of Elizabeth when asked about the bracelet:
+// 	If Elizabeth wears the bracelet:
+// 		Say "'It's a charm bracelet. But it's a poor one, and not very charming. I've lost all the charms.'[paragraph break][The Elizabeth] sighs.";
+// 		Now the subject-charms is familiar;
+// 	Otherwise:
+// 		Say "'I hope you're making better use of it than I was. I don't think Gerald ever forgave me for losing all the charms. Have you found any charms?'";
+// 		Now the subject-charms is familiar;
+// 		Now the subject-gerald is familiar.
+// Response of Elizabeth when asked about the lighthouse:
+// 	Say "'Gerald loves lighthouses. Sometimes I wonder if he loves them more than he loves me.'";
+// 	Now subject-gerald is familiar.
+// Response of Elizabeth when asked about the subject-charms:
+// 	If the player encloses a charm:
+// 		Let C be a random charm enclosed by the player;
+// 		Say "'Oh! You've found my [C],' [the Elizabeth] says. [run paragraph on]";
+// 		If Elizabeth encloses the bracelet:
+// 			Grant the bracelet;
+// 	Let X be the number of charms enclosed by the player;
+// 	Let Y be the number of charms;
+// 	Let Z be Y - X;
+// 	Say "'There were quite a few of them, but I've lost them all[If the player encloses a charm]. It looks like you've got all but [Z in words] of them[end if].'";
+// 	Repeat with C running through every charm:
+// 		Now C is familiar.
+// Response of Elizabeth when asked about the fire hydrant charm:
+// 	If the fire hydrant charm is handled:
+// 		Say "'It was where? In a bird's nest?'";
+// 		If Elizabeth encloses the bracelet:
+// 			Grant the bracelet;
+// 	Otherwise:
+// 		Say "'That one was stolen by a sea gull. I was feeding it, and it swept down, and took the charm right off my wrist!'".
+// Response of Elizabeth when asked about the hook charm:
+// 	If the hook charm is handled:
+// 		Say "'The ferry captain had it? I must have dropped it before I even got to the island.'";
+// 		If Elizabeth encloses the bracelet:
+// 			Grant the bracelet;
+// 	Otherwise:
+// 		Say "'I think I dropped that one on the ferry. It probably didn't even make it to the island.'".
+// Response of Elizabeth when asked about the thimble charm:
+// 	If the thimble charm is handled:
+// 		Say "'Right where I thought it was.'";
+// 		If Elizabeth encloses the bracelet:
+// 			Grant the bracelet;
+// 	Otherwise:
+// 		Say "'Oh, I know where that one is,' [the elizabeth] says. 'It's in our room at the inn.'".
+// Response of Elizabeth when asked about the pelican charm:
+// 	If the pelican charm is handled:
+// 		Say "'You have that damn bird a good smack for me?'";
+// 		If Elizabeth encloses the bracelet:
+// 			Grant the bracelet;
+// 	Otherwise:
+// 		Say "'It was eaten by a pelican. Yes, I know.'".
+// Response of Elizabeth when asked about the slipper charm:
+// 	If the slipper charm is handled:
+// 		Say "'Where was it? Well, she must have found it in the garden then.'";
+// 		If Elizabeth encloses the bracelet:
+// 			Grant the bracelet;
+// 	Otherwise:
+// 		Say "'That was the very last one I had. I last saw it in that garden behind the inn.'".
+// Response of Elizabeth when asked about the lighthouse charm:
+// 	If the lighthouse charm is handled:
+// 		Say "'An eagle? I guess they like shiney things too.'";
+// 		If Elizabeth encloses the bracelet:
+// 			Grant the bracelet;
+// 	Otherwise:
+// 		Say "'I think I lost that one while we were touring the lighthouse. I had it on the way up and didn't on the way down.'".
+// ]
+
+

@@ -42,10 +42,12 @@ namespace ConversationCompiler
                     return;
                 }
 
-                if (state.Next() == '@') ParseDeclaration(state, Compiler);
+                if (state.Next() == '@' || state.Next() == '+' || state.Next() == '?' || state.Next() == '*') 
+                    ParseDeclaration(state, Compiler);
                 else if (state.Next() == '#') ParseDirective(state, Compiler);
                 else if (state.MatchNext("follows")) ParseFollowsBlock(state, Compiler);
                 else if (state.MatchNext("supplies")) ParseSuppliesBlock(state, Compiler);
+                else if (state.MatchNext("directly")) ParseDirectlyBlock(state, Compiler);
                 else if (state.MatchNext("//")) ParseComment(state);
                 else throw new InvalidOperationException("Unknown line type");
             }
@@ -93,7 +95,16 @@ namespace ConversationCompiler
 
         private static void ParseDeclaration(ParseState state, QuipCompiler Compiler)
         {
-            state.Advance(1); //skip opening '@'.
+            var Type = QuipType.Questioning;
+            bool Repeatable = false;
+            bool Restrictive = false;
+            while (!state.AtEnd() && (state.Next() == '@' || state.Next() == '+' || state.Next() == '?' || state.Next() == '*'))
+            {
+                if (state.Next() == '+') Repeatable = true;
+                if (state.Next() == '?') Restrictive = true;
+                if (state.Next() == '*') Type = QuipType.NpcDirected;
+                state.Advance(1);
+            }
             var ID = "";
             var Name = "";
             if (!IsWhitespace(state.Next()))
@@ -101,12 +112,15 @@ namespace ConversationCompiler
             ParseRestOfLine(out Name, state);
             Name = Name.Trim();
             if (String.IsNullOrEmpty(Name)) throw new InvalidOperationException("Quip declared with no name");
-            var lastChar = Name[Name.Length - 1];
-            var Type = QuipType.Questioning;
-            if (lastChar == '?') { Name = Name.Substring(0, Name.Length - 1); Type = QuipType.Questioning; }
-            else if (lastChar == '.') { Name = Name.Substring(0, Name.Length - 1); Type = QuipType.Informative; }
-            else if (lastChar == '!') { Name = Name.Substring(0, Name.Length - 1); Type = QuipType.Performative; }
-            Compiler.BeginQuip(ID, Name, Type);
+            if (Type != QuipType.NpcDirected)
+            {
+                var lastChar = Name[Name.Length - 1];
+                if (lastChar == '?') { Name = Name.Substring(0, Name.Length - 1); Type = QuipType.Questioning; }
+                else if (lastChar == '.') { Name = Name.Substring(0, Name.Length - 1); Type = QuipType.Informative; }
+                else if (lastChar == '!') { Name = Name.Substring(0, Name.Length - 1); Type = QuipType.Performative; }
+                else if (lastChar == '$') { Name = Name.Substring(0, Name.Length - 1); Type = QuipType.NpcDirected; }
+            }
+            Compiler.BeginQuip(ID, Name, Type, Repeatable, Restrictive);
         }
 
         private static void ParseDirective(ParseState state, QuipCompiler Compiler)
@@ -116,12 +130,13 @@ namespace ConversationCompiler
             if (!IsWhitespace(state.Next()))
                 ParseToken(out Command, state);
 
-            if (String.IsNullOrEmpty(Command) || Command == "comment" || Command == "response")
+            if (String.IsNullOrEmpty(Command) || Command == "comment" || Command == "response" || Command == "nag")
             {
                 var Text = "";
                 ParseRestOfLine(out Text, state);
                 if (Command == "comment") Compiler.CommentDirective(Text);
                 else if (Command == "response") Compiler.ResponseDirective(Text);
+                else if (Command == "nag") Compiler.NagDirective(Text);
                 else Compiler.BlankDirective(Text);
             }
             else if (Command == "follows")
@@ -130,11 +145,25 @@ namespace ConversationCompiler
                 ParseList(TokenList, state);
                 Compiler.FollowsDirective(TokenList);
             }
+            else if (Command == "directly")
+            {
+                var TokenList = new List<String>();
+                ParseList(TokenList, state);
+                Compiler.DirectlyDirective(TokenList);
+            }
             else if (Command == "supplies")
             {
                 var TokenList = new List<String>();
                 ParseList(TokenList, state);
                 Compiler.SuppliesDirective(TokenList);
+            }
+            else if (Command == "unavailable")
+            {
+                var Text = "";
+                ParseRestOfLine(out Text, state);
+                Text = Text.Trim();
+                if (!String.IsNullOrEmpty(Text))
+                    Compiler.UnavailableDirective(Text);
             }
             else
             {
@@ -149,6 +178,19 @@ namespace ConversationCompiler
             var TokenList = new List<String>();
             ParseList(TokenList, state);
             Compiler.BeginFollowsBlock(TokenList);
+            DevourWhitespace(state);
+            if (state.Next() != '{') throw new InvalidOperationException("Expected {");
+            state.Advance(1);
+            ParseLines(state, Compiler);
+        }
+
+        private static void ParseDirectlyBlock(ParseState state, QuipCompiler Compiler)
+        {
+            var token = "";
+            ParseToken(out token, state); //Skip the word 'follows'.
+            var TokenList = new List<String>();
+            ParseList(TokenList, state);
+            Compiler.BeginDirectlyBlock(TokenList);
             DevourWhitespace(state);
             if (state.Next() != '{') throw new InvalidOperationException("Expected {");
             state.Advance(1);

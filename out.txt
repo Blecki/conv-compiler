@@ -1,0 +1,230 @@
+[Quips compiled by Conversation Compiler]
+
+Quip100000 is a privately-named questioning quip.
+The printed name is "if he would like a fish".
+Understand "if", "he", "would", "like", "a", "fish" as Quip100000.
+The comment is "'Would you like a fish?' you ask.".
+The response is "'No, no,' Mr. Henrico responds, politely refusing the offered sea creature. 'I'm not a fan of sushi.'".
+It quip-supplies Henrico.
+An availability rule for Quip100000:
+	If the player does not enclose a fish, it is off-limits;
+
+
+Quip100001 is a privately-named questioning quip.
+The printed name is "if he saw that enormous pelican".
+Understand "if", "he", "saw", "that", "enormous", "pelican" as Quip100001.
+The comment is "'Did you see that gigantic bird?' you ask.".
+The response is "'Seemed kind of small for a pelican, actually,' Mr. Henrico says.".
+It quip-supplies Henrico.
+An availability rule for Quip100001:
+	If Shoo is hungry, it is off-limits;
+
+
+Quip100002 is a privately-named questioning quip.
+The printed name is "what he knows about your grandmother".
+Understand "what", "he", "knows", "about", "your", "grandmother" as Quip100002.
+The comment is "'You've spoken to her, right? Is she really that awful?' you ask.".
+The response is "Mr. Henrico rubs his chin. 'She seemed nice enough on the phone. You shouldn't worry about it. I'm sure the things your mother used to tell you about her were exaggeration.'".
+It quip-supplies Henrico.
+
+Quip100003 is a privately-named informative quip.
+The printed name is "the things your mother told you".
+Understand "the", "things", "your", "mother", "told", "you" as Quip100003.
+The comment is "'Mother called her an insurmountable old shrew. She never wrote, you know. I expected her not to call, they probably don't even have electricity, but they've got mail, right?'".
+The response is "Mr. Henrico stares at you perplexed for a moment and then plasters his fake everything is all right grin on again. 'I don't know about all that now. I'm sure they have electricity. Though she did have to come over to the mainland to call me..'".
+It quip-supplies Henrico.
+It indirectly-follows Quip100002 [what he knows about your grandmother].
+
+Quip100004 is a privately-named questioning quip.
+The printed name is "what he thinks about you".
+Understand "what", "he", "thinks", "about", "you" as Quip100004.
+The comment is "'What about me?' you ask. 'Have you decided you hate me as much as all the others did yet?'".
+The response is "'I don't see why anyone would hate you. Too smart for your own good, I think,' Mr. Henrico says. 'You need to work on that cynicism, too. You're far too young to be so jaded, and it won't help you in the long run.'".
+It quip-supplies Henrico.
+It indirectly-follows Quip100002 [what he knows about your grandmother].
+
+Quip100005 is a privately-named questioning quip.
+The printed name is "couldn't you live with your aunt instead".
+Understand "couldn't", "you", "live", "with", "your", "aunt", "instead" as Quip100005.
+The comment is "'I still don't see why I couldn't go live with aunt Jamie.'".
+The response is "'Your Grandmother is your last living relation and she's kindly offered to take you in, you should be happy about this,' Mr. Henrico insists. 'Miss Jamie isn't even your aunt, she's just a friend of your mother's, and the law is very clear on this.'".
+It quip-supplies Henrico.
+It indirectly-follows Quip100002 [what he knows about your grandmother].
+
+Quip100006 is a privately-named questioning quip.
+The printed name is "about himself".
+Understand "about", "himself" as Quip100006.
+The comment is "'What about you, Mr. Henrico?'".
+The response is "'Never really thought I was cut out for this sort of thing,' Mr. Henrico muses, as if ha hadn't actually heard you ask anything. 'Going to call this one a rousing success, though.'".
+It quip-supplies Henrico.
+
+Quip100007 is a privately-named questioning quip.
+The printed name is "what he knows about the island".
+Understand "what", "he", "knows", "about", "the", "island" as Quip100007.
+The comment is "'Is the island as dreadful as it sounds?' you ask.".
+The response is "'I've heard it's very nice. No television or internet to get in the way of enjoying yourself out there. Really good fishing, too,' Mr. Henrico says.".
+It quip-supplies Henrico.
+
+Quip100008 is a privately-named restrictive npc-directed quip.
+The response is "'Do you believe in ghosts?' Mr. Henrico asks.".
+The nag is "[one of]'Children often believe in strange things, do you?' Mr. Henrico asks.[or]'Don't worry about ghosts. You don't believe in them, do you?' Mr. Henrico asks.[purely at random]".
+
+Quip100009 is a privately-named informative quip.
+The printed name is "yes".
+Understand "yes" as Quip100009.
+The comment is "'Lots of people have seen ghosts,' you say.".
+The response is "Mr. Henrico looks rather dissapointed.".
+It quip-supplies Henrico.
+It directly-follows Quip100008 [Henrico probes about ghosts].
+
+Quip100010 is a privately-named informative quip.
+The printed name is "no".
+Understand "no" as Quip100010.
+The comment is "'No way,' you say.".
+The response is "Mr. Henrico nods. That was the answer he wanted.".
+It quip-supplies Henrico.
+It directly-follows Quip100008 [Henrico probes about ghosts].
+
+Quip100011 is a privately-named npc-directed quip.
+The response is "'Not that I believe in ghosts,' Mr. Henrico mutters.[queue Quip100008]".
+
+Quip100012 is a privately-named informative quip.
+The printed name is "that you read the lighthouse was haunted".
+Understand "that", "you", "read", "the", "lighthouse", "was", "haunted" as Quip100012.
+The comment is "'Wikipedia says the lighthouse is haunted,' you say.".
+The response is "'Don't like lighthouses,' Mr. Henrico replies. 'Too tall and too bright. Don't like ghosts either, for different reasons.'[queue Quip100011]".
+It quip-supplies Henrico.
+It indirectly-follows Quip100007 [what he knows about the island].
+
+Quip100013 is a privately-named informative quip.
+The printed name is "look at my pocket watch".
+Understand "look", "at", "my", "pocket", "watch" as Quip100013.
+The comment is "'Have I shown you my pocket watch?' you ask, holding up the watch where Mr. Henrico can see.".
+The response is "'Only a thousand times,' Mr. Henrico replies. 'What have I told you about moving on? You'll never be able to as long as you cling to things like that.'".
+It quip-supplies Henrico.
+An availability rule for Quip100013:
+	If the pocket watch is not examined, it is off-limits;
+
+
+Quip100014 is a privately-named questioning quip.
+The printed name is "if he knows your grandmother".
+Understand "if", "he", "knows", "your", "grandmother" as Quip100014.
+The comment is "'Do you know my grandmother?' you ask. 'She's.. uh. Old, I guess.'".
+The response is "'Huh,' says [the Spider]. 'I reckon I probably do. Old, huh? There's only one of them on the island, so I reckon you're after Catherine, who runs the bed and breakfast.'".
+It quip-supplies Spider.
+
+Quip100015 is a privately-named questioning quip.
+The printed name is "if many people stay at the bed and breakfast".
+Understand "if", "many", "people", "stay", "at", "the", "bed", "and", "breakfast" as Quip100015.
+The comment is "'Are there a lot of guests at the bed and breakfast?' you ask.".
+The response is "'Well... no,' [the Spider] responds. 'See most bed and breakfastes are better described as beds and breakfasteses, but at this one I reckon the bed is singular.'".
+It quip-supplies Spider.
+It indirectly-follows Quip100014 [if he knows your grandmother].
+
+Quip100016 is a privately-named questioning quip.
+The printed name is "who are you".
+Understand "who", "are", "you" as Quip100016.
+The comment is "'Is this your boat?' you ask, to get at the real question in a roundabout way. 'You look rather like a sea captain.'".
+The response is "'Captain!' exclaims [the Spider]. 'That's my first name. The rest of it is Spider. That's not really my name o'course, but everyone yells Cap'n Spider when who they really want is me, so you might as well call me that too.'[perform introduce Spider]".
+It quip-supplies Spider.
+
+Quip100017 is a privately-named questioning quip.
+The printed name is "is there anything interesting to do on the island".
+Understand "is", "there", "anything", "interesting", "to", "do", "on", "the", "island" as Quip100017.
+The comment is "'What do you do for fun on the island?' you ask. This is a very important question since you've never much been a fan of building sand castles or yelling at seagulls, and you can't think of anything else there is to do on an island.".
+The response is "'Oh fish, mostly. And sail.' [The Spider] rubs his chin. 'Motor, I reckon, cause I got a motor not sails. And there's the lighthouse, if you're into tall things with bright lights on the top. And treasure.'".
+It quip-supplies Spider.
+
+Quip100018 is a privately-named questioning quip.
+The printed name is "can you tour the top of the lighthouse".
+Understand "can", "you", "tour", "the", "top", "of", "the", "lighthouse" as Quip100018.
+The comment is "'Am I allowed to go up in the lighthouse?' you ask.".
+The response is "'I don't see why not,' [the Spider] says. 'You'd have to ask Franklin.'".
+It quip-supplies Spider.
+It indirectly-follows Quip100017 [is there anything interesting to do on the island].
+
+Quip100019 is a privately-named questioning quip.
+The printed name is "who is Franklin".
+Understand "who", "is", "Franklin" as Quip100019.
+The comment is "[if immediately]'Who'se that?' you ask.[otherwise]'Who is Franklin?' you ask.[end if]".
+The response is "'He's a coast guard reject. Always thought he was a bit odd. He keeps the lighthouse going. Spinning and shining, that's what's important I reckon.'".
+It quip-supplies Spider.
+It indirectly-follows Quip100018 [can you tour the top of the lighthouse].
+
+Quip100020 is a privately-named questioning quip.
+The printed name is "what about treasure".
+Understand "what", "about", "treasure" as Quip100020.
+The comment is "'What was that about treasure?' you ask.".
+The response is "'Oh you know, the sparkly kind. It's somewhere in that cave by the beach. I got into it, too, though it made Catherine mighty mad.'".
+It quip-supplies Spider.
+It indirectly-follows Quip100017 [is there anything interesting to do on the island].
+
+Quip100021 is a privately-named questioning quip.
+The printed name is "why would treasure make her mad".
+Understand "why", "would", "treasure", "make", "her", "mad" as Quip100021.
+The comment is "'Why would looking for treasure make her mad?' you ask.".
+The response is "'Oh that's an easy one,' [the spider] says. 'Just look in her cellar and find out!'".
+It quip-supplies Spider.
+It indirectly-follows Quip100020 [what about treasure].
+
+Quip100022 is a privately-named questioning quip.
+The printed name is "what's with the hook".
+Understand "what's", "with", "the", "hook" as Quip100022.
+The comment is "'Why are you using a hook for buttons?' you ask. 'You've got buttons already.'".
+The response is "'Hook?' [the Spider] asks. 'What hook?' [The Spider] looks down at his shirt. 'This isn't even mine,' he says as he removes the hook and does up the buttons instead.[paragraph break][perform now the player holds the hook charm][perform remove the spider-hook from play][The Spider] gives the hook to you.".
+It quip-supplies Spider.
+An availability rule for Quip100022:
+	If Spider is not examined, it is off-limits;
+
+
+Quip100023 is a privately-named informative quip.
+The printed name is "that's an interesting pipe".
+Understand "that's", "an", "interesting", "pipe" as Quip100023.
+The comment is "'You've got a very interesting pipe,' you say. You don't mention that it's not even lit.".
+The response is "'What, this old thing?' [the Spider] asks. 'Only carved it myself. Yep. From the jaw bone of a dolphin.'".
+It quip-supplies Spider.
+
+Quip100024 is a privately-named questioning quip.
+The printed name is "are there any dolphins on Akkoteaque".
+Understand "are", "there", "any", "dolphins", "on", "Akkoteaque" as Quip100024.
+The comment is "'Are there any dolphins on the island?' you ask.".
+The response is "[The Spider] ponders for a moment. 'On, no, I don't think so. But there are some around the island, yep. Always thought they were vermin but some people seem to like them. And I suppose they do save people who fall off the cliff sometimes.'".
+It quip-supplies Spider.
+It indirectly-follows Quip100023 [that's an interesting pipe].
+
+Quip100025 is a privately-named questioning quip.
+The printed name is "what's with the pelican".
+Understand "what's", "with", "the", "pelican" as Quip100025.
+The comment is "'Is that pelican always in the way?' you ask. 'Doesn't anyone care that it's pestering people?'".
+The response is "[The Spider] says, 'That damn bird is the laziest thing I ever saw, but she doesn't actually harm anything so we let her be. We all call her Shoo. As in... shoo.'".
+It quip-supplies Spider.
+
+Quip100026 is a privately-named questioning quip.
+The printed name is "what is Delmarva".
+Understand "what", "is", "Delmarva" as Quip100026.
+The comment is "'What is 'Delmarva'?' you ask.".
+The response is "'Deleware, Maryland, Virginia,' [the Spider] says. 'That's all three states on the pennies-ula.'".
+It quip-supplies Spider.
+An availability rule for Quip100026:
+	If Spider is not in the Jetty, it is off-limits;
+
+
+Quip100027 is a privately-named questioning quip.
+The printed name is "if he sees that giant boat".
+Understand "if", "he", "sees", "that", "giant", "boat" as Quip100027.
+The comment is "'Do you see that giant boat?' you ask. You point, just in case he's blind.".
+The response is "'Aye I see it. On the wrong damn side of the island!' [the Spider] shouts.[paragraph break]Then he mutters with his pipe clenched between his teeth, 'Like as not get us all killed.'".
+It quip-supplies Spider.
+An availability rule for Quip100027:
+	If the ferry is not enclosed by the sea, it is off-limits;
+
+
+Quip100028 is a privately-named repeatable questioning quip.
+The printed name is "if he knows anything about this ancient key".
+Understand "if", "he", "knows", "anything", "about", "this", "ancient", "key" as Quip100028.
+The comment is "You hold up [the ancient key] for [the Spider] to see. 'Do you know anything about this?'".
+The response is "[The Spider] takes a close look. 'Found that beauty in the caves. Reckon if I ever find the chest with the treasure init, that'll open it. Don't go and lose it, hear?'".
+It quip-supplies Spider.
+An availability rule for Quip100028:
+	If the ancient key is not examined, it is off-limits;
+

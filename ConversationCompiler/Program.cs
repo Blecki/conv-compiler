@@ -11,6 +11,7 @@ namespace ConversationCompiler
         {
             String inFile = null;
             String outFile = null;
+            int quipBase = 0;
 
 #region Parse switches
             if (args.Length == 0) 
@@ -47,6 +48,19 @@ namespace ConversationCompiler
                         return;
                     }
                 }
+                else if (args[i] == "-b")
+                {
+                    if (i + 1 < args.Length)
+                    {
+                        quipBase = Int32.Parse(args[i + 1]);
+                        ++i;
+                    }
+                    else
+                    {
+                        Help();
+                        return;
+                    }
+                }
                 else
                 {
                     if (inFile == null) inFile = args[i];
@@ -62,7 +76,7 @@ namespace ConversationCompiler
 
             var source = System.IO.File.OpenText(inFile);
 
-            var Compiler = new QuipCompiler();
+            var Compiler = new QuipCompiler(quipBase);
             Parser.Parse(source, Compiler);
             source.Close();
 
